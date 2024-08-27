@@ -1,5 +1,5 @@
 import face_recognition as fr
-from deepface import DeepFace
+# from deepface import DeepFace
 import cv2
 import numpy as np
 import os
@@ -25,13 +25,13 @@ class FaceMatcherModel:
 
         return matching[0], distance[0]
 
-    def face_matching_deepid_model(self, face_1: np.ndarray, face_2: np.ndarray) -> Tuple[bool, float]:
-        try:
-            result = DeepFace.verify(img1_path=face_1, img2_path=face_2, model_name=self.model)
-            matching, distance = result['verified'], result['distance']
-            return matching, distance
-        except:
-            return False, 0.0        
+    # def face_matching_deepid_model(self, face_1: np.ndarray, face_2: np.ndarray) -> Tuple[bool, float]:
+    #     try:
+    #         result = DeepFace.verify(img1_path=face_1, img2_path=face_2, model_name=self.model)
+    #         matching, distance = result['verified'], result['distance']
+    #         return matching, distance
+    #     except:
+    #         return False, 0.0        
 
 
 # Metodo find para comparar las imágenes de una db
